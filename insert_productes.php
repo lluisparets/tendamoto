@@ -57,5 +57,13 @@
         <button type="submit"> enviar</button>
         </div>
 
+        <div>
+            <leable><b>proveidor</b></leable>
+            <select require name="proveidor">
+                <option value=""></option>
+            </select>
+
+        </div>
+
     </body>
 </html>
