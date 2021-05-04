@@ -6,5 +6,5 @@
 
     <p> tot ha anat be </p>
     <p>
-        <?php echo $_GET ['ok']; ?>
+        
     </p>
