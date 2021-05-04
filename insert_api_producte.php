@@ -13,13 +13,18 @@
     $categoria = $_POST['categoria'];
     $preu = $_POST['preu'];
 
-    $query ="INSERT INTO moto (marca,model,cilindrada,categoria,preu) VALUES (\"$marca\",\"$model\",\"$cilindrada\",\"$categoria\",\"$preu\");";
+    $query ="INSERT INTO Moto (marca,model,cilindrada,categoria,preu) VALUES (\"$marca\",\"$model\",\"$cilindrada\",\"$categoria\",\"$preu\");";
     echo "<p>" .$query. "</p>";
 
     $res= mysqli_query($bbdd, $query);
-        IF(!$res){
-            echo"no ha anat be";
-            print (mysqli_error($bbdd));
-        }
-        
+        if(!$result)
+            {
+                header("Location: ok.php");
+            }
+        else
+            {
+                $error =mysqli_error($bbdd);
+                header("location: no_okphp? error=$error");
+            }
+
 ?>
