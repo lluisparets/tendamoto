@@ -24,7 +24,7 @@
 
         <div>
             <Label> <b>quina cilindrada vols</b></Label>
-            <input required name="cilindraca" placeholder="cilindrada moto"> </input>
+            <input required name="cilindrada" placeholder="cilindrada moto"> </input>
         </div>
 
         <div>
