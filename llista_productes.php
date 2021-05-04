@@ -58,7 +58,7 @@
 
         <tbody>
             <?php
-                $query="select M.*,P.Nom AS no1mProveidor from Moto as M INNER JOIN Proveidor as P ON (M.fkidProveidor = P.idProveidor)";
+                $query="select M.*,P.Nom AS nomProveidor from Moto as M INNER JOIN Proveidor as P ON (M.fkidProveidor = P.idProveidor)";
                 $result = mysqli_query($bbdd,$query) or die(mysqli_error($bbdd));
                 while ($row = mysqli_fetch_assoc($result))
                 {
