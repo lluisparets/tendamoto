@@ -20,6 +20,7 @@
             <td>73672</td>
             <td>10.500€</td>
         </tr>
+<<<<<<< HEAD
 
         <tr>
             <td>83743</td>
@@ -36,11 +37,30 @@
         </tr>
         
         <tr>
+=======
+
+        <tr>
+            <td>83743</td>
+            <td>Kawasaki ninja</td>
+            <td>8304</td>
+            <td>15.789'99€</td>
+        </tr>
+
+        <tr>
+            <td>2943</td>
+            <td>Honda cbr</td>
+            <td>8304</td>
+            <td>8.550€</td>
+        </tr>
+
+        <tr>
+>>>>>>> master
             <td>83743</td>
             <td>BMW S1000RR</td>
             <td>39483</td>
             <td>20.947€</td>
         </tr>
+<<<<<<< HEAD
     </table>
 
     <table>
@@ -74,6 +94,9 @@
                 }
                 ?>
         </tbody>
+=======
+
+>>>>>>> master
     </table>
 
 </body>
