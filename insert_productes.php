@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es-ES">
 <?php require 'includes/head.php';?>
-    <body>
+    <body style="background-color: #fff59d;">
     <?php require 'includes/header.php';?>
-        <h1>questionari</h1>
+        <h1>INSERTA UNA MOTO</h1>
         <form action="insert_api_producte.php" method="POST">
 
         <div>
@@ -57,11 +57,7 @@
         <button type="submit"> enviar</button>
         </div>
 
-        <div>
-            <leable><b>proveidor</b></leable>
-            <select require name="proveidor">
-                <option value=""></option>
-            </select>
+        </select>
 
         </div>
 
