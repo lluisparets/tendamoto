@@ -7,7 +7,7 @@
         <form action="insert_api_producte.php" method="POST">
 
         <div>
-            <Label><b>quina moto vols?</b></Label>
+            <Label><b>Marca de la moto</b></Label>
             <select required name="marca" >
                 <option value="Kawasaki">Kawasaki</option>
                 <option value="yamaha">yamaha</option>
@@ -18,22 +18,22 @@
         </div>
 
         <div>
-            <Label> <b>quin model vols</b></Label>
+            <Label> <b>Model de la moto</b></Label>
             <input required name="model" placeholder="model moto"> </input>
         </div>
 
         <div>
-            <Label> <b>quina cilindrada vols</b></Label>
+            <Label> <b>Cilindrada de la moto</b></Label>
             <input required name="cilindrada" placeholder="cilindrada moto"> </input>
         </div>
 
         <div>
-            <Label> <b>quina categoria vols</b></Label>
+            <Label> <b>Categoria de la moto</b></Label>
             <input required name="categoria" placeholder="categoria de moto"> </input>
         </div>
 
         <div>
-            <Label> <b>preu</b></Label>
+            <Label> <b>Preu de la moto</b></Label>
             <input required name="preu" placeholder="preu moto"> </input>
         </div>
 
