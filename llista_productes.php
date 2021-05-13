@@ -2,7 +2,7 @@
 <html lang="es-ES">
 <?php require 'includes/head.php'; ?>
 
-<body>
+<body style="background-color: #fff59d;">
     <?php require 'includes/header.php'; ?>
     <h1>Llista productes</h1>
 
