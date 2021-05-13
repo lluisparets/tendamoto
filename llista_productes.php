@@ -9,8 +9,11 @@
     <form action="llista_productes.php" method="get" style="margin-bottom: 40px;"> 
         <Label><b>Filtrar per proveidor</b></Label>
         <select required name="proveidor">
-            <option value="Kawasaki">Kawasaki</option>
-            <option value="Yamaha">Yamaha</option>
+            <option value="3">Kawasaki</option>
+            <option value="2">Yamaha</option>
+            <option value="6">Keeway</option>
+            <option value="7">Dukati</option>
+            <option value="8">Aprilia</option>
         </select>
         <button type="submit">Filtrar</button>
     </form>
@@ -29,7 +32,12 @@
 
         <tbody>
             <?php
-            $query = "select M.*,P.Nom AS nomProveidor from Moto as M INNER JOIN Proveidor as P ON (M.fkidProveidor = P.idProveidor)";
+            $where = '';
+            if(isset($_GET['proveidor'])){
+                $where = " WHERE M.fkidProveidor = '$_GET[proveidor]' ";
+            }
+            $query = "select M.*,P.Nom AS nomProveidor from Moto as M 
+            INNER JOIN Proveidor as P ON (M.fkidProveidor = P.idProveidor) $where";
             $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>
