@@ -6,5 +6,5 @@
 
     <p> Algo no ha anat be, torna a provar </p>
     <p>
-         <?php echo $_GET ['error']; ?>
+         <?php echo $_GET['error']; ?>
     </p>
