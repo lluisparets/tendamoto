@@ -27,7 +27,9 @@
                 <th>Categoria</th>
                 <th>Preu</th>
                 <th>Proveidor</th>
+                <th>Opcions</th>
             </tr>
+           
         </thead>
 
         <tbody>
@@ -48,6 +50,8 @@
                             <td> $row[Categoria] </td>
                             <td> $row[Preu] </td>
                             <td> $row[nomProveidor] </td>
+                            <td><a href=\"delete_api_productes.php?id=$row[idMoto]\">ELIMINAR</a></td>
+
                         </tr>";
             }
             ?>
