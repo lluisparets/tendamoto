@@ -9,6 +9,10 @@
 <br>
 <a href="insert_client.php"> insertar un client</a>
 <br>
+<<<<<<< HEAD
 <a href="insert_tenda.php"> insertar una tenda</a>
 
+=======
+<a href="insert_venta.php"> insertar una venta</a>
+>>>>>>> 8c34cfdf7a921876907fa401be2003270a089414
 </header>
