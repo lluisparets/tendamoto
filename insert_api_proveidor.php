@@ -1,7 +1,7 @@
 <?php 
 require 'includes/head.php'; 
 
-echo "<p>" . $_POST['Nom'] . "</p>";
+    echo "<p>" . $_POST['Nom'] . "</p>";
 echo "<p>" . $_POST['Adreca'] . "</p>";
 echo "<p>" . $_POST['Telefon'] . "</p>";
 

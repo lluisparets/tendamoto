@@ -4,7 +4,7 @@
 
 <body style="background-color: #fff59d;">
     <?php require 'includes/header.php'; ?>
-    <h1>Llista productes</h1>
+    <h1 style="color:blue;">Llista productes</h1>
 
     <form action="llista_productes.php" method="get" style="margin-bottom: 40px;"> 
         <Label><b>Filtrar per proveidor</b></Label>
