@@ -9,4 +9,3 @@ if($result){
     $error = mysqli_error($bbdd);
     header("Location: no_ok.php?error=$error");
 }
-
