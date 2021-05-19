@@ -4,7 +4,7 @@
     <body style="background-color: #fff59d;">
     <?php require 'includes/header.php';?>
 
-    <h1>INSERTA UN PPROVEIDOR</h1>
+    <h1 style="color:blue;">INSERTA UN PPROVEIDOR</h1>
     <form action="insert_api_proveidor.php" method="POST">
     
     <div>

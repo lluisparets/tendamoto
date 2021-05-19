@@ -4,7 +4,7 @@
     <body style="background-color: #fff59d;">
     <?php require 'includes/header.php';?>
 
-    <h1>INSERTA UN CLIENT</h1>
+    <h1 style="color:blue;">INSERTA UN CLIENT</h1>
     <form action="insert_api_client.php" method="POST">
 
     <div>
