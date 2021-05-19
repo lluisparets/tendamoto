@@ -6,5 +6,9 @@
 <a href="insert_productes.php"> insertar motos</a>
 <br>
 <a href="insert_proveidor.php"> insertar un proveidor</a>
+<br>
 <a href="insert_client.php"> insertar un client</a>
+<br>
+<a href="insert_tenda.php"> insertar una tenda</a>
+
 </header>
