@@ -24,25 +24,38 @@
     </div>
 
     <div>
-            <Label><b>Client</b></Label>
-            <select required name="fkidclient" >
-                <option value="1">Carlos Campi</option>
-                <option value="2">Mariano Salazar</option>
-                <option value="3">Laura Caira</option>
+        <Label> <b>Client</b></label>
+
+        <select name="fkidclient">
+            <?php
+                $query="select idclient,firstname,lastname from Client";
+                $result = mysqli_query($bbdd,$query) or die (mysqli_error($bbdd));
+                while ($row= mysqli_fetch_assoc($result))
+                {
+                    echo"<option value=\"$row[idclient]\">$row[firstname] $row[lastname]</option>";
+
+                }
+            ?>
             </select>
         </div>
 
         <div>
-            <Label><b>Moto comprada</b></Label>
-            <select required name="fkidmoto" >
-                <option value="Kawasaki">Kawasaki</option>
-                <option value="yamaha">yamaha</option>
-                <option value="Honda">Honda</option>
-                <option value="ktm">ktm</option>
-                <option value="bmw">bmw</option>
+        <Label> <b>Moto</b></label>
+
+        <select name="fkidmoto">
+            <?php
+                $query="select idMoto,Marca,Model,Cilindrada from Moto";
+                $result = mysqli_query($bbdd,$query) or die (mysqli_error($bbdd));
+                while ($row= mysqli_fetch_assoc($result))
+                {
+                    echo"<option value=\"$row[idMoto]\">$row[Marca] $row[Model] $row[Cilindrada]</option>";
+
+                }
+            ?>
             </select>
         </div>
         
+        <div>
         <button type="submit"> enviar</button>
         </div>
 

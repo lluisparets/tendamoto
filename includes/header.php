@@ -1,18 +1,14 @@
 <header>
-<a href="index.php"> home </a>
-<br>
-<a href="llista_productes.php"> llista de les motos</a>
-<br>
-<a href="insert_productes.php"> insertar motos</a>
-<br>
-<a href="insert_proveidor.php"> insertar un proveidor</a>
-<br>
-<a href="insert_client.php"> insertar un client</a>
-<br>
-<<<<<<< HEAD
-<a href="insert_tenda.php"> insertar una tenda</a>
+    <meta charset="UTF-8">
+    <link rel="style.css">
 
-=======
-<a href="insert_venta.php"> insertar una venta</a>
->>>>>>> 8c34cfdf7a921876907fa401be2003270a089414
+<a href="index.php" class="button>"> Inici </a>
+<a href="llista_productes.php">motos</a>
+<a href="llista_proveidors.php">proveidors</a>
+<a href="insert_productes.php"> insertar motos</a>
+<a href="insert_proveidor.php"> insertar proveidor</a>
+<a href="insert_client.php"> insertar client</a>
+<a href="insert_tenda.php"> insertar tenda</a>
+<a href="insert_venta.php"> insertar venta</a>
+
 </header>
