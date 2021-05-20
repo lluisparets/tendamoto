@@ -1,16 +1,26 @@
 table,td {
 	border: 1px solid;
 }
-header{
 	
-	list-style: none;
+/*Estilos Generales*/
+header a{
+	background:#025efc;
+	color:#fff;
+	display:inline-block;
+	font-size: 15px;
+	margin: 5px;
+	padding: 10px 0px;
 	text-align: center;
+	width: 140px;
+	text-decoration: none;
+	box-shadow: 0px 3px 0 px #0caeae;
 
 
-
-
-}	
-
+}
+img{
+	display:block;
+	margin:auto;
+	}
  div{
 	 margin-top: 10px;
 

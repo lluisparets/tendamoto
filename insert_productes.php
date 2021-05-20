@@ -11,9 +11,9 @@
             <select required name="marca" >
                 <option value="Kawasaki">Kawasaki</option>
                 <option value="yamaha">yamaha</option>
-                <option value="Honda">Honda</option>
-                <option value="ktm">ktm</option>
-                <option value="bmw">bmw</option>
+                <option value="keeway">keeway</option>
+                <option value="ducati">ducati</option>
+                <option value="aprilia">aprilia</option>
             </select>
         </div>
 
