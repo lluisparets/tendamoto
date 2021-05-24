@@ -4,7 +4,7 @@
     <body style="background-color: #fff59d;">
     <?php require 'includes/header.php';?>
 
-    <h1>INSERTA UNA TENDA</h1>
+    <h1 style="color:blue;">INSERTA UNA TENDA</h1>
     <form action="insert_api_tenda.php" method="POST">
     
     <div>
