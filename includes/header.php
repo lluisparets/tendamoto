@@ -3,12 +3,23 @@
     <link rel="style.css">
 
 <a href="index.php" class="button>"> Inici </a>
-<a href="llista_productes.php">motos</a>
-<a href="llista_proveidors.php">proveidors</a>
-<a href="insert_productes.php"> insertar motos</a>
-<a href="insert_proveidor.php"> insertar proveidor</a>
-<a href="insert_client.php"> insertar client</a>
-<a href="insert_tenda.php"> insertar tenda</a>
-<a href="insert_venta.php"> insertar venta</a>
+<div class="desp">
+            <p>taules</p>
+            <ul>
+                <li><a href="llista_productes.php">motos</a></li>
+                <li><a href="llista_proveidors.php">proveidors</a></li>
+            </ul>
+        </div>
+<div class="desp">
+            <p>inserts</p>
+            <ul>
+                <li><a href="insert_productes.php"> insertar motos</a></li>
+                <li><a href="insert_proveidor.php"> insertar proveidor</a></li>
+                <li><a href="insert_client.php"> insertar client</a></li>
+                <li><a href="insert_tenda.php"> insertar tenda</a></li>
+                <li><a href="insert_venta.php"> insertar venta</a></li>
+            </ul>
+        </div>
+
 
 </header>

@@ -10,13 +10,5 @@
         </p>  
         <img src="imatges/tenda moto.png" whith= "500px"/>   
         
-        
-        <div class="exemple">
-            <h1>hola</h1>
-            <ul>
-                <li>input 1</li>
-                <li> input 2</li>
-            </ul>
-        </div>
     </body>
 </html>
