@@ -25,3 +25,6 @@ img{
 	 margin-top: 10px;
 
  }
+
+ .exemple ul{display:none;}
+ .exemple:hover ul{display:block;}
