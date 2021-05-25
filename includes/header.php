@@ -9,9 +9,9 @@
         <a href="javascript:void(0)" class="dropbtn">Taules</a>
         <div class="dropdown-content">
                 <a href="llista_productes.php">motos</a>
-                <a href="llista_proveidor.php">proveidors</a>
+                <a href="llista_proveidors.php">proveidors</a>
                 <a href="llista_venta.php">ventes</a>
-                <a href="llista_client.php">client</a>
+                <a href="llista_clients.php">client</a>
             
     <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Inserts</a>
