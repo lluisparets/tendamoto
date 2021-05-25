@@ -1,8 +1,17 @@
 table,td {
 	border: 1px solid;
 }
-	
-/*Estilos Generales*/
+
+/*Titols*/
+.titol{
+	color: #333;
+	/*align="center" style="color: #333;"*/
+}
+
+.subtitol{
+	color: #333;
+}
+
 
 /*espais inserts*/
 div{

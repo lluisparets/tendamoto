@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-ES">
 <?php require 'includes/head.php';?>
-    <body style="background-color: #fff59d;">
     <?php require 'includes/header.php';?>
 
     <h1 style="color:blue;">INSERTA UNA VENTA</h1>
