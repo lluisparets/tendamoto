@@ -1,24 +1,24 @@
 <?php
 
-include "editar.php"; // Using database connection file here
+include "editar.php"; 
 
-$id = $_GET['id']; // get id through query string
+$id = $_GET['id'];
 
-$qry = mysqli_query($db,"select * from Proveidor where id='$id'"); // select query
+$qry = mysqli_query($db,"select * from Proveidor where id='$id'");
 
-$data = mysqli_fetch_array($qry); // fetch data
+$data = mysqli_fetch_array($qry); 
 
-if(isset($_POST['update'])) // when click on Update button
-{
-    $fullname = $_POST['fullname'];
-    $age = $_POST['age'];
+if(isset($_POST['update'])) 
+    $Nom = $_POST['Nom'];
+    $Adreca = $_POST['Adreca'];
+    $Telefon = $_POST['Telefon'];
 	
     $edit = mysqli_query($db,"update Proveidor set Nom='$Nom', Adreca='$Adreca' where Telefon='$Telefon'");
 	
     if($edit)
     {
-        mysqli_close($db); // Close connection
-        header("location:llista_proveidors.php"); // redirects to all records page
+        mysqli_close($db);
+        header("location:llista_proveidors.php");
         exit;
     }
     else
