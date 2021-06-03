@@ -1,37 +1,32 @@
 <?php
 
-include "editar.php"; // Using database connection file here
+include "includes/head.php"; 
 
-$id = $_GET['id']; // get id through query string
+$id = $_GET['id'];
 
-$qry = mysqli_query($db,"select * from Proveidor where id='$id'"); // select query
+$qry = mysqli_query($bbdd,"select * from Proveidor where id='$id'") or die (mysqli_error($bbdd));
 
-$data = mysqli_fetch_array($qry); // fetch data
+$data = mysqli_fetch_assoc($qry); 
 
-if(isset($_POST['update'])) // when click on Update button
-{
-    $fullname = $_POST['fullname'];
-    $age = $_POST['age'];
-	
-    $edit = mysqli_query($db,"update Proveidor set Nom='$Nom', Adreca='$Adreca' where Telefon='$Telefon'");
+if(isset($_POST['update'])) 
+    $Nom = $_POST['Nom'];
+    $Adreca = $_POST['Adreca'];
+    $Telefon = $_POST['Telefon'];
+    $edit = mysqli_query($bbdd,"update Proveidor set Nom='$Nom', Adreca='$Adreca', Telefon='$Telefon'");
 	
     if($edit)
     {
-        mysqli_close($db); // Close connection
-        header("location:llista_proveidors.php"); // redirects to all records page
+        mysqli_close($bbdd);
+        header("location:llista_proveidors.php");
         exit;
     }
     else
     {
         echo mysqli_error($bbdd);
     }    	
-}
 ?>
 
-<h3>Update Data</h3>
 
-<form method="POST">
-  <input type="text" name="Nom" value="<?php echo $data['Nom'] ?>" placeholder="Nom del proveidor..." Required>
-  <input type="text" name="Adreca" value="<?php echo $data['Adreca'] ?>" placeholder="Adreça del proveidor..." Required>
-  <input type="text" name="Telefon" value="<?php echo $data['Telefon'] ?>" placeholder="Telefon del proveidor..." Required>
-  <input ty
+</body>
+
+</html>

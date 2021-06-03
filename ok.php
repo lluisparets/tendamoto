@@ -5,6 +5,3 @@
     <?php require 'includes/header.php';?>
 
     <p> tot ha anat be </p>
-    <p>
-        
-    </p>
