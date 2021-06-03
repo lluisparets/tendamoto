@@ -5,6 +5,26 @@
         <h1 style="color:blue;">INSERTA UNA MOTO</h1>
         <form action="insert_api_producte.php" method="POST">
 
+        <?php
+    $model = '';
+    $cilindrada = '';
+    $categoria = '';
+    $preu = '';
+    if(isset($_GET['id']))
+    {
+        $query = "SELECT * from Client WHERE idClient = $_GET[id]";
+        $result = mysqli_query($bbdd, $query) or die (mysqli_error($bbdd));
+        $Client = mysqli_fetch_assoc($result);
+        $firstname = $Client['firstname'];
+        $lastname = $Client['lastname'];
+        $direccio = $Client['direccio'];
+        $Email = $Client['Email'];
+        $Numero_Telefon = $Client['Numero_Telefon'];
+    }
+?>
+
+<form action="<?=(isset($_GET['id'])) ? "update_api_clients.php?idClient=$_GET[id]" : 'insert_api_client.php'?>" method="POST">
+
         <div>
             <Label><b>Marca de la moto</b></Label>
             <select required name="marca" >

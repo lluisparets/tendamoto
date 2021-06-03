@@ -26,6 +26,7 @@
                 <th>Email</th>
                 <th>Telèfon</th>
                 <th>Opcions</th>
+                <th>Editar</th>
             </tr>
            
         </thead>
@@ -43,10 +44,11 @@
                             <td> $row[idclient] </td>
                             <td> $row[firstname] </td>
                             <td> $row[lastname] </td>
-                            <td> $row[adreca] </td>
+                            <td> $row[direccio] </td>
                             <td> $row[Email] </td>
                             <td> $row[Numero_Telefon] </td>
                             <td><a href=\"delete_api_clients.php?id=$row[idclient]\">ELIMINAR</a></td>
+                            <td><a href=\"insert_client.php?id=$row[idclient]\">EDITAR</a></td>
 
                         </tr>";
             }

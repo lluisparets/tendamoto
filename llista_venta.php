@@ -48,6 +48,7 @@
                             <td> $row[nom_client] $row[ll_client] </td>
                             <td> $row[nom_moto] </td>
                             <td><a href=\"delete_api_venta.php?id=$row[idVenta]\">ELIMINAR</a></td>
+                            <td><a href=\"insert_venta.php?id=$row[idVenta]\">EDITAR</a></td>
 
                         </tr>";
             }
