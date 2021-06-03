@@ -47,7 +47,7 @@
                             <td> $row[Adreca] </td>
                             <td> $row[Telefon] </td>
                             <td><a href=\"delete_api_proveidors.php?id=$row[idProveidor]\">ELIMINAR</a></td>
-                            <td><a href=\"insert_proveidor.php?id=$row[idProveidor]\">EDITAR</a></td>
+                            <td><a href=\"editar_query.php?id=$data[idProveidor]\">EDITAR</a></td>
                         </tr>";
             }
             ?>
@@ -55,6 +55,6 @@
         </tbody>
     </table>
 
-</body>
+</body> 
 
 </html>
