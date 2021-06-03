@@ -51,7 +51,7 @@
                             <td> $row[Preu] </td>
                             <td> $row[nomProveidor] </td>
                             <td><a href=\"delete_api_productes.php?id=$row[idMoto]\">ELIMINAR</a></td>
-
+                            <td><a href=\"insert_productes.php?id=$row[idMoto]\">EDITAR</a></td>
                         </tr>";
             }
             ?>

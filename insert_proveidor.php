@@ -6,7 +6,7 @@
     <h1 style="color:blue;">INSERTA UN PPROVEIDOR</h1>
     <form action="insert_api_proveidor.php" method="POST">
     
-    <div>
+    <div>  
         <Label><b>Nom del proveidor</b></Label>
         <input required name="Nom" placeholder="nom proveidor..."> </input>
     </div>

@@ -1,6 +1,6 @@
 <?php
 require "includes/head.php";
-$query="delete from moto where idMoto=\"$_GET[id]\" ";
+$query="delete from Moto where idMoto=\"$_GET[id]\" ";
 $result=mysqli_query($bbdd,$query);
 
 if($result){
