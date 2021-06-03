@@ -6,20 +6,35 @@
     <h1 style="color:blue;">INSERTA UNA VENTA</h1>
     <form action="insert_api_venta.php" method="POST">
 
+    <?php
+    $Fecha = '';
+    $Preu = '';
+    $Compra = '';
+    if(isset($_GET['id']))
+    {
+        $query = "SELECT * from Venta WHERE idVenta = $_GET[id]";
+        $result = mysqli_query($bbdd, $query) or die (mysqli_error($bbdd));
+        $Venta = mysqli_fetch_assoc($result);
+        $Fecha = $Venta['Fecha'];
+        $Preu = $Venta['Preu'];
+        $Compra = $Venta['Compra'];
+    }
+?>
+
     <div>
         <Label><b>Data de la venta</b></Label>
-        <input required name="Fecha" placeholder="Data..."> </input>
+        <input required name="Fecha" value="<?=$Fecha?>" placeholder="Data..."> </input>
     </div>
 
     <div>
 
         <Label><b>Preu de la venta</b></Label>
-        <input required name="Preu" placeholder="Preu..."> </input>
+        <input required name="Preu" value="<?=$Preu?>" placeholder="Preu..."> </input>
     </div>
 
     <div>
         <Label><b>Productes comprats</b></Label>
-        <input required name="Compra" placeholder="productes..."> </input>
+        <input required name="Compra" value="<?=$Compra?>" placeholder="productes..."> </input>
     </div>
 
     <div>

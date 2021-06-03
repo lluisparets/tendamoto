@@ -5,21 +5,20 @@
         <h1 style="color:blue;">INSERTA UNA MOTO</h1>
         <form action="insert_api_producte.php" method="POST">
 
-        <?php
-    $model = '';
-    $cilindrada = '';
-    $categoria = '';
-    $preu = '';
+<?php
+    $Model = '';
+    $Cilindrada = '';
+    $Categoria = '';
+    $Preu = '';
     if(isset($_GET['id']))
     {
-        $query = "SELECT * from Client WHERE idClient = $_GET[id]";
+        $query = "SELECT * from Moto WHERE idMoto = $_GET[id]";
         $result = mysqli_query($bbdd, $query) or die (mysqli_error($bbdd));
-        $Client = mysqli_fetch_assoc($result);
-        $firstname = $Client['firstname'];
-        $lastname = $Client['lastname'];
-        $direccio = $Client['direccio'];
-        $Email = $Client['Email'];
-        $Numero_Telefon = $Client['Numero_Telefon'];
+        $Moto = mysqli_fetch_assoc($result);
+        $Model = $Moto['Model'];
+        $Cilindrada = $Moto['Cilindrada'];
+        $Categoria = $Moto['Categoria'];
+        $Preu = $Moto['Preu'];
     }
 ?>
 
@@ -38,22 +37,22 @@
 
         <div>
             <Label> <b>Model de la moto</b></Label>
-            <input required name="model" placeholder="model moto"> </input>
+            <input required name="model" value="<?=$Model?>" placeholder="model moto"> </input>
         </div>
 
         <div>
             <Label> <b>Cilindrada de la moto</b></Label>
-            <input required name="cilindrada" placeholder="cilindrada moto"> </input>
+            <input required name="cilindrada" value="<?=$Cilindrada?>"placeholder="cilindrada moto"> </input>
         </div>
 
         <div>
             <Label> <b>Categoria de la moto</b></Label>
-            <input required name="categoria" placeholder="categoria de moto"> </input>
+            <input required name="categoria" value="<?=$Categoria?>" placeholder="categoria de moto"> </input>
         </div>
 
         <div>
             <Label> <b>Preu de la moto</b></Label>
-            <input required name="preu" placeholder="preu moto"> </input>
+            <input required name="preu" value="<?=$Preu?>" placeholder="preu moto"> </input>
         </div>
 
         <div>
