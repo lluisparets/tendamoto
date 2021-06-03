@@ -1,37 +1,31 @@
 <?php
 
-include "editar.php"; // Using database connection file here
+include "includes/mysql.php"; 
 
-$id = $_GET['id']; // get id through query string
+$id = $_GET['id'];
+/*
+$qry = mysqli_query($bbdd,"select * from Proveidor where idProveidor='$id'") or die (mysqli_error($bbdd));
 
-$qry = mysqli_query($db,"select * from Productes where id='$id'"); // select query
-
-$data = mysqli_fetch_array($qry); // fetch data
-
-if(isset($_POST['update'])) // when click on Update button
-{
-    $fullname = $_POST['fullname'];
-    $age = $_POST['age'];
-	
-    $edit = mysqli_query($db,"update Productes set Nom='$Nom', Adreca='$Adreca' where Telefon='$Telefon'");
+$data = mysqli_fetch_assoc($qry); 
+*/
+if(isset($id)) 
+    $Marca = $_POST['Marca'];
+    $Model = $_POST['Model'];
+    $Cilindrada = $_POST['Cilindrada'];
+    $Categoria = $_POST['Categoria'];
+    $Preu = $_POST['Preu'];
+    $query = "update Proveidor set Marca='$Marca', Model='$Model', Cilindrada='$Cilindrada', Categoria='$Categoria', Preu='$Preu' WHERE idProveidor = $id";
+    $edit = mysqli_query($bbdd,$query);
 	
     if($edit)
     {
-        mysqli_close($db); // Close connection
-        header("location:llista_productes.php"); // redirects to all records page
-        exit;
+        mysqli_close($bbdd);
+        header("location:ok.php");
     }
     else
     {
-        echo mysqli_error($bbdd);
-    }    	
-}
-?>
-
-<h3>Update Data</h3>
-
-<form method="POST">
-  <input type="text" name="Nom" value="<?php echo $data['Nom'] ?>" placeholder="Nom del proveidor..." Required>
-  <input type="text" name="Adreca" value="<?php echo $data['Adreca'] ?>" placeholder="Adreça del proveidor..." Required>
-  <input type="text" name="Telefon" value="<?php echo $data['Telefon'] ?>" placeholder="Telefon del proveidor..." Required>
-  <input ty>
+        $error =  mysqli_error($bbdd);
+        header("location:no_ok.php?error=$error");
+    }    
+    
+        
