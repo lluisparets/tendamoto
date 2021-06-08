@@ -2,6 +2,20 @@
 
 include "includes/mysql.php"; 
 
+$updateImg = '';
+if(isset($_FILES['imatgeMoto'])){
+    $tmp = $_FILES['imatgeMoto']['tmp_name'];
+    $path = 'imatges/productes/' . $_GET['id'] .  '.jpg';
+    $m = move_uploaded_file($tmp, $path);
+    if(!$m){
+        echo 'imatge no pujada'; exit();
+    }
+    $updateImg = ", imatgeMoto = \"$_GET[id].jpg\" ";
+}else{
+
+    return"";
+}
+
 $id = $_GET['id'];
 /*
 $qry = mysqli_query($bbdd,"select * from Proveidor where idProveidor='$id'") or die (mysqli_error($bbdd));
@@ -9,12 +23,14 @@ $qry = mysqli_query($bbdd,"select * from Proveidor where idProveidor='$id'") or 
 $data = mysqli_fetch_assoc($qry); 
 */
 if(isset($id)) 
-    $Marca = $_POST['Marca'];
-    $Model = $_POST['Model'];
-    $Cilindrada = $_POST['Cilindrada'];
-    $Categoria = $_POST['Categoria'];
-    $Preu = $_POST['Preu'];
-    $query = "update Proveidor set Marca='$Marca', Model='$Model', Cilindrada='$Cilindrada', Categoria='$Categoria', Preu='$Preu' WHERE idProveidor = $id";
+    $Marca = $_POST['marca'];
+    $Model = $_POST['model'];
+    $Cilindrada = $_POST['cilindrada'];
+    $Categoria = $_POST['categoria'];
+    $Preu = $_POST['preu'];ps://localhost/tendamoto_git/tendamoto/llista_venta.php
+    $query = "update Moto set marca='$Marca', model='$Model', cilindrada='$Cilindrada', 
+    categoria='$Categoria', preu='$Preu' WHERE idMoto = $id";
+    //echo $query; exit();
     $edit = mysqli_query($bbdd,$query);
 	
     if($edit)

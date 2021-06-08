@@ -42,6 +42,7 @@
             INNER JOIN Proveidor as P ON (M.fkidProveidor = P.idProveidor) $where";
             $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
             while ($row = mysqli_fetch_assoc($result)) {
+                $id=$row["idMoto"];
                 echo "<tr>
                             <td> $row[idMoto] </td>
                             <td> $row[Marca] </td>
@@ -52,6 +53,7 @@
                             <td> $row[nomProveidor] </td>
                             <td><a href=\"delete_api_productes.php?id=$row[idMoto]\">ELIMINAR</a></td>
                             <td><a href=\"insert_productes.php?id=$row[idMoto]\">EDITAR</a></td>
+                            <td><img width=\"75\" src=\" imatges/productes/$id.jpg\">IMATGE</img></td>
                         </tr>";
             }
             ?>

@@ -2,6 +2,7 @@
 <html lang="es-ES">
 <?php require 'includes/head.php';?>
     <?php require 'includes/header.php';?>ç
+    <h1 style="color:blue;"><?=isset($_GET['id']) ? 'ACTUALITZA' : 'INSERTA'?>UN CLIENT</h1>
 
 <?php
     $firstname = '';
@@ -23,10 +24,7 @@
     }
 ?>
 
-<form action="<?=(isset($_GET['id'])) ? "update_api_clients.php?idClient=$_GET[id]" : 'insert_api_client.php'?>" method="POST">
-
-    <h1 style="color:blue;">INSERTA UN CLIENT</h1>
-    <form action="insert_api_client.php" method="POST">
+ <form action="<?=isset($_GET['id']) ? 'update_api_clients.php?id='.$_GET['id'] : 'insert_api_client.php'?>" method="POST">
 
     <div>
         <Label><b>Nom del client</b></Label>

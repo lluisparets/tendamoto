@@ -17,7 +17,7 @@ if(isset($id))
 	
     if($edit)
     {
-        mysqli_close($bbdd);
+        mysqli_close($bbdd);    
         header("location:ok.php");
     }
     else

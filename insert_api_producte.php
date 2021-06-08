@@ -16,11 +16,11 @@ $preu = $_POST['preu'];
 $query = "INSERT INTO Moto (marca,model,cilindrada,categoria,preu) VALUES (\"$marca\",\"$model\",\"$cilindrada\",\"$categoria\",\"$preu\");";
 echo "<p>" . $query . "</p>";
 
-$res = mysqli_query($bbdd, $query);
+$result = mysqli_query($bbdd, $query);
 if ($result) {
     header("Location: ok.php");
 } else {
     $error = mysqli_error($bbdd);
-    header("location: no_ok.php?error=$error");
+    header("Location: no_ok.php?error=$error");
 }
 
