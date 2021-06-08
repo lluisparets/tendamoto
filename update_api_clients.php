@@ -14,7 +14,9 @@ if(isset($id))
     $direccio = $_POST['direccio'];
     $Email = $_POST['Email'];
     $Numero_Telefon = $_POST['Numero_Telefon'];
-    $edit = mysqli_query($bbdd,"update Client set firstname='$firstname', lastname='$lastname', direccio='$direccio', Email='$Email', NUmero_Telefon='$Numero_Telefon");
+    $query = "update Client set 'firstname='$firstname', lastname='$lastname', 
+    direccio='$direccio', Email='$Email', Numero_Telefon='$Numero_Telefon' WHERE idClient = $id";
+    $edit = mysqli_query($bbdd,$query);
 	
     if($edit)
     {

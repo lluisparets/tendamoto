@@ -12,7 +12,7 @@ if(isset($id))
     $Fecha = $_POST['Fecha'];
     $Preu = $_POST['Preu'];
     $Compra = $_POST['Compra'];
-    $query = "update Proveidor set Fecha='$Fecha', Preu='$Preu', Compra='$Compra' WHERE idVenta = $id";
+    $query = "update Venta set Fecha='$Fecha', Preu='$Preu', Compra='$Compra' WHERE idVenta= $id";
     $edit = mysqli_query($bbdd,$query);
 	
     if($edit)
