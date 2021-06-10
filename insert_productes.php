@@ -18,6 +18,8 @@ if (isset($_GET['id'])) {
     $Cilindrada = $Moto['Cilindrada'];
     $Categoria = $Moto['Categoria'];
     $Preu = $Moto['Preu'];
+    $updateImg = $Moto['imatgeMoto'];
+
 }
 ?>
 

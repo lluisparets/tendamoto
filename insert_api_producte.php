@@ -1,19 +1,32 @@
 <?php 
 require 'includes/head.php'; 
 
-echo "<p>" . $_POST['marca'] . "</p>";
-echo "<p>" . $_POST['model'] . "</p>";
-echo "<p>" . $_POST['cilindrada'] . "</p>";
-echo "<p>" . $_POST['categoria'] . "</p>";
-echo "<p>" . $_POST['preu'] . "</p>";
+$updateImg = '';
+if(isset($_FILES['imatgeMoto'])){
+    $tmp = $_FILES['imatgeMoto']['tmp_name'];
+    $path = 'imatges/productes/' . $_GET['id'] .  '.jpg';
+    @unlink($path);
+    $m = move_uploaded_file($tmp, $path);
+    if(!$m){
+        echo 'imatge no pujada'; exit();
+    }
+    $updateImg = ", imatgeMoto = \"$_GET[id].jpg\" ";
+}else{
+
+    return"";
+}
 
 $marca = $_POST['marca'];
 $model = $_POST['model'];
 $cilindrada = $_POST['cilindrada'];
 $categoria = $_POST['categoria'];
 $preu = $_POST['preu'];
+$fkidproveidor = $_POST['fkidProveidor'];
+$updateImg = $_POST['updateImg'];
 
-$query = "INSERT INTO Moto (marca,model,cilindrada,categoria,preu) VALUES (\"$marca\",\"$model\",\"$cilindrada\",\"$categoria\",\"$preu\");";
+
+$query = "INSERT INTO Moto (marca,model,cilindrada,categoria,preu,fkidproveidor,updateImg) VALUES (\"$marca\",\"$model\",\"$cilindrada\"
+,\"$categoria\",\"$preu\",\"$fkidproveidor\",\"$updateImg\");";
 echo "<p>" . $query . "</p>";
 
 $result = mysqli_query($bbdd, $query);
