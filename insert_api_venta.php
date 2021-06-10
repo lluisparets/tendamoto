@@ -8,7 +8,8 @@ $Compra = $_POST['Compra'];
 $fkidclient = $_POST['fkidclient'];
 $fkidmoto = $_POST['fkidmoto'];
 
-$query = "INSERT INTO Venta (Fecha,Preu,Compra,fkidclient,fkidmoto) VALUES (\"$Fecha\",\"$Preu\",\"$Compra\",\"$fkidmoto\",\"$fkidclient\")";
+$query = "INSERT INTO Venta (Fecha,Preu,Compra,fkidclient,fkidmoto) VALUES (\"$Fecha\",\"$Preu\",\"$Compra\",
+\"$fkidclient\", \"$fkidmoto\")";
 
 $result = mysqli_query($bbdd, $query);
 if ($result) {

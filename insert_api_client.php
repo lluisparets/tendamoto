@@ -16,7 +16,7 @@ $Numero_Telefon = $_POST['Numero_Telefon'];
 $query = "INSERT INTO Client (firstname,lastname,direccio,Email,Numero_Telefon) VALUES (\"$firstname\",\"$lastname\",\"$direccio\",\"$Email\",\"$Numero_Telefon\");";
 echo "<p>" . $query . "</p>";
 
-$res = mysqli_query($bbdd, $query);
+$result = mysqli_query($bbdd, $query);
 
 if ($result) {
     header("Location: ok.php");

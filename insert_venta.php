@@ -4,6 +4,7 @@
     <?php require 'includes/header.php';?>
 
     <h1 style="color:blue;"><?=isset($_GET['id']) ? 'ACTUALITZA' : 'INSERTA'?> UNA VENTA</h1>
+    <form action="<?=isset($_GET['id']) ? 'update_api_venta.php?id='.$_GET['id'] : 'insert_api_venta.php'?>" method="POST">
 
     <?php
     $Fecha = '';
@@ -19,22 +20,20 @@
         $Compra = $Venta['Compra'];
     }
 ?>
-    <form action="<?=isset($_GET['id']) ? 'update_api_venta.php?idVenta='.$_GET['id'] : 'insert_api_venta.php'?>" method="POST">
-
     <div>
         <Label><b>Data de la venta</b></Label>
-        <input required name="Fecha" values="<?=$Fecha?>" placeholder="Data..."> </input>
+        <input required name="Fecha" value="<?=$Fecha?>" placeholder="Data..."> </input>
     </div>
 
     <div>
 
         <Label><b>Preu de la venta</b></Label>
-        <input required name="Preu" values="<?=$Preu?>" placeholder="Preu..."> </input>
+        <input required name="Preu" value="<?=$Preu?>" placeholder="Preu..."> </input>
     </div>
 
     <div>
         <Label><b>Productes comprats</b></Label>
-        <input required name="Compra" values="<?=$Compra?>" placeholder="productes..."> </input>
+        <input required name="Compra" value="<?=$Compra?>" placeholder="productes..."> </input>
     </div>
 
     <div>
