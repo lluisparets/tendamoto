@@ -6,6 +6,7 @@ $updateImg = '';
 if(isset($_FILES['imatgeMoto'])){
     $tmp = $_FILES['imatgeMoto']['tmp_name'];
     $path = 'imatges/productes/' . $_GET['id'] .  '.jpg';
+    @unlink($path);
     $m = move_uploaded_file($tmp, $path);
     if(!$m){
         echo 'imatge no pujada'; exit();
