@@ -50,7 +50,7 @@ img{
   li.dropdown {
 	display: inline-block;
   }
-  
+
   .dropdown-content {
 	display: none;
 	position: absolute;
@@ -75,5 +75,24 @@ img{
   .dropdown:hover .dropdown-content {
 	display: block;
   }
+  
 
-	 
+  table.form{
+	  width: 400px;
+	  border:none;
+  }
+  table.form td{
+	  width: 50%;
+	  border:none;
+  }
+  table.form td:first-child{
+	  text-align: right;
+  }
+
+  table.form input{
+	  width: 90%;
+  }
+
+  table.form tr:last-child td{
+	  text-align: right;
+  }
