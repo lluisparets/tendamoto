@@ -14,6 +14,7 @@ if (isset($_GET['id'])) {
     $query = "SELECT * from Moto WHERE idMoto = $_GET[id]";
     $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
     $Moto = mysqli_fetch_assoc($result);
+    $Marca = $Moto['Marca'];
     $Model = $Moto['Model'];
     $Cilindrada = $Moto['Cilindrada'];
     $Categoria = $Moto['Categoria'];
@@ -21,43 +22,42 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<form action="<?= (isset($_GET['id'])) ? "update_api_productes.php?id=$_GET[id]" : 'insert_api_producte.php' ?>" method="POST" enctype="multipart/form-data">
 
-    <div>
-        <Label><b>Marca de la moto</b></Label>
-        <select required name="marca">
-            <option value="Kawasaki">Kawasaki</option>
-            <option value="yamaha">yamaha</option>
-            <option value="keeway">keeway</option>
-            <option value="ducati">ducati</option>
-            <option value="aprilia">aprilia</option>
-        </select>
-    </div>
+<table class="form">
+    <tr>
+        <td></td>
+        <td><form action="<?= (isset($_GET['id'])) ? "update_api_productes.php?id=$_GET[id]" : 'insert_api_producte.php' ?>" method="POST" enctype="multipart/form-data"></td>
+        
+    </tr>
+    <tr>
+        <td><Label><b>Marca de la moto</b></Label></td>
+        <td><input required name="marca" value="<?= $Marca ?>" placeholder="marca moto"> </input></td>
+    </tr>
+    <td><Label> <b>Model de la moto</b></Label></td>
+    <td><input required name="model" value="<?= $Model ?>" placeholder="model moto"> </input></td>
+    </tr>
 
-    <div>
-        <Label> <b>Model de la moto</b></Label>
-        <input required name="model" value="<?= $Model ?>" placeholder="model moto"> </input>
-    </div>
+    <tr>
+        <td> <Label> <b>Cilindrada de la moto</b></Label></td>
+        <td> <input required name="cilindrada" value="<?= $Cilindrada ?>" placeholder="cilindrada moto"> </input></td>
+    </tr>
 
-    <div>
-        <Label> <b>Cilindrada de la moto</b></Label>
-        <input required name="cilindrada" value="<?= $Cilindrada ?>" placeholder="cilindrada moto"> </input>
-    </div>
+    <tr>
+        <td><Label> <b>Categoria de la moto</b></Label></td>
+        <td><input required name="categoria" value="<?= $Categoria ?>" placeholder="categoria de moto"> </input></td>
+    </tr>
 
-    <div>
-        <Label> <b>Categoria de la moto</b></Label>
-        <input required name="categoria" value="<?= $Categoria ?>" placeholder="categoria de moto"> </input>
-    </div>
+    <tr>
+        <td><Label> <b>Preu de la moto</b></Label></td>
+        <td><input required name="preu" value="<?= $Preu ?>" placeholder="preu moto"> </input></td>
+    </tr>
 
-    <div>
-        <Label> <b>Preu de la moto</b></Label>
-        <input required name="preu" value="<?= $Preu ?>" placeholder="preu moto"> </input>
-    </div>
-    <div>
-        <input name="imatgeMoto" type="file" accept="img/jpg" />
-    </div>
+    <tr>
+        <td></td>
+        <td><input name="imatgeMoto" type="file" accept="img/jpg" /></td>
+    </tr>
 
-    <div>
+    <tr>
         <Label> <b>Proveidor</b></label>
 
         <select name="fkidProveidor">
@@ -69,16 +69,16 @@ if (isset($_GET['id'])) {
             }
             ?>
         </select>
-    </div>
+    </tr>
+    <td></td>
+    <td><button type="submit"> enviar</button></td>
+    <tr>
+
+    </tr>
+
+    </form>
 
 
-    <div>
-        <button type="submit"> enviar</button>
-    </div>
-
-</form>
-
-
-</body>
+    </body>
 
 </html>

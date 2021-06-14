@@ -9,4 +9,3 @@ if(!$bbdd){
     print(mysqli_connect_error());
     
 }
-?>

@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="es-ES">
-<?php require 'includes/head.php';?>
-    <?php require 'includes/header.php';?>
+<?php require 'includes/head.php'; ?>
+<?php require 'includes/header.php'; ?>
 
-    <h1 style="color:blue;"><?=isset($_GET['id']) ? 'ACTUALITZA' : 'INSERTA'?> UNA VENTA</h1>
-    <form action="<?=isset($_GET['id']) ? 'update_api_venta.php?id='.$_GET['id'] : 'insert_api_venta.php'?>" method="POST">
+<h1 style="color:blue;"><?= isset($_GET['id']) ? 'ACTUALITZA' : 'INSERTA' ?> UNA VENTA</h1>
+<form action="<?= isset($_GET['id']) ? 'update_api_venta.php?id=' . $_GET['id'] : 'insert_api_venta.php' ?>" method="POST">
 
     <?php
     $Fecha = '';
     $Preu = '';
     $Compra = '';
-    if(isset($_GET['id']))
-    {
+    if (isset($_GET['id'])) {
         $query = "SELECT * from Venta WHERE idVenta = $_GET[id]";
-        $result = mysqli_query($bbdd, $query) or die (mysqli_error($bbdd));
+        $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
         $Venta = mysqli_fetch_assoc($result);
         $Fecha = $Venta['Fecha'];
         $Preu = $Venta['Preu'];
         $Compra = $Venta['Compra'];
     }
-?>
-    <div>
-        <Label><b>Data de la venta</b></Label>
-        <input required name="Fecha" value="<?=$Fecha?>" placeholder="Data..."> </input>
-    </div>
+    ?>
+    <table class="form">
 
-    <div>
+        <tr>
+            <td><Label><b>Data de la venta</b></Label></td>
+            <td><input required name="Fecha" value="<?= $Fecha ?>" placeholder="Data..."> </input></td>
+        </tr>
 
-        <Label><b>Preu de la venta</b></Label>
-        <input required name="Preu" value="<?=$Preu?>" placeholder="Preu..."> </input>
-    </div>
+        <tr>
 
-    <div>
-        <Label><b>Productes comprats</b></Label>
-        <input required name="Compra" value="<?=$Compra?>" placeholder="productes..."> </input>
-    </div>
+            <td><Label><b>Preu de la venta</b></Label></td>
+            <td><input required name="Preu" value="<?= $Preu ?>" placeholder="Preu..."> </input></td>
+        </tr>
 
-    <div>
-        <Label> <b>Client</b></label>
+        <tr>
+            <td><Label><b>Productes comprats</b></Label></td>
+            <td><input required name="Compra" value="<?= $Compra ?>" placeholder="productes..."> </input></td>
+        </tr>
 
-        <select name="fkidclient">
-            <?php
-                $query="select idclient,firstname,lastname from Client";
-                $result = mysqli_query($bbdd,$query) or die (mysqli_error($bbdd));
-                while ($row= mysqli_fetch_assoc($result))
-                {
-                    echo"<option value=\"$row[idclient]\">$row[firstname] $row[lastname]</option>";
+        <tr>
+            <td><Label> <b>Client</b></label></td>
 
-                }
-            ?>
-            </select>
+            <td><select name="fkidclient">
+                    <?php
+                    $query = "select idclient,firstname,lastname from Client";
+                    $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value=\"$row[idclient]\">$row[firstname] $row[lastname]</option>";
+                    }
+                    ?>
+                </select></td>
+        </tr>
+
+        <tr>
+            <td><Label> <b>Moto</b></label></td>
+
+            <td><select name="fkidmoto">
+                    <?php
+                    $query = "select idMoto,Marca,Model,Cilindrada from Moto";
+                    $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value=\"$row[idMoto]\">$row[Marca] $row[Model] $row[Cilindrada]</option>";
+                    }
+                    ?>
+                </select></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><button type="submit"> enviar</button></td>
+        </tr>
+
+
+
         </div>
 
-        <div>
-        <Label> <b>Moto</b></label>
+        </body>
 
-        <select name="fkidmoto">
-            <?php
-                $query="select idMoto,Marca,Model,Cilindrada from Moto";
-                $result = mysqli_query($bbdd,$query) or die (mysqli_error($bbdd));
-                while ($row= mysqli_fetch_assoc($result))
-                {
-                    echo"<option value=\"$row[idMoto]\">$row[Marca] $row[Model] $row[Cilindrada]</option>";
-
-                }
-            ?>
-            </select>
-        </div>
-        
-        <div>
-        <button type="submit"> enviar</button>
-        </div>
-
-        </select>
-
-        </div>
-
-    </body>
 </html>

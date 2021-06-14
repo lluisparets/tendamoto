@@ -1,5 +1,5 @@
-<?php 
-require 'includes/head.php'; 
+<?php
+require 'includes/head.php';
 
 
 $Fecha = $_POST['Fecha'];
@@ -17,4 +17,4 @@ if ($result) {
 } else {
     $error = mysqli_error($bbdd);
     header("location: no_ok.php?error=$error");
-}  
+}
